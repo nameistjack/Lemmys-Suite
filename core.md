@@ -7,6 +7,8 @@ permalink: /core/
 
 # Lemmy's Core
 
+<p class="page-links"><a class="button primary" href="{{ site.links.workshop_core }}" target="_blank" rel="noreferrer">Steam Workshop</a> <a class="button secondary" href="{{ site.links.discord }}" target="_blank" rel="noreferrer">Discord support</a></p>
+
 Core is a small server-only PBO and the **server-side dependency of Advanced Groups and Advanced Banking**. Load it with `-serverMod`; players never download it. It does four jobs:
 
 1. owns the `$profile:LemmysSuite` folder,

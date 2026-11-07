@@ -9,6 +9,14 @@ permalink: /keycards/
 
 A load-after add-on for the Workshop mod **Herosper Keycards** (`2886051760`). It makes keycard doors work on DayZ 1.30 and turns every keycard door into a raid. It does not need Lemmy's Core, Advanced Groups or Advanced Banking.
 
+<div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ site.links.video_keycards }}" title="Herosper Keycards Remastered" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+
+<p class="page-links"><a class="button primary" href="{{ site.links.workshop_keycards }}" target="_blank" rel="noreferrer">Steam Workshop</a> <a class="button secondary" href="{{ site.links.discord }}" target="_blank" rel="noreferrer">Discord support</a></p>
+
+Requires the original [Herosper Keycards]({{ site.links.workshop_herosper }}) from the Steam Workshop.
+
 The full guide — every editor field, the placement keys, files and troubleshooting — is in the [documentation]({{ site.baseurl }}/docs/herosper-keycards-remastered.html).
 
 ## What a raid looks like

@@ -17,7 +17,7 @@ permalink: /docs/getting-started.html
 
 | Mod | Folder / file | Server | Client | Notes |
 |---|---|---|---|---|
-| Lemmy's Core | `@Lemmys Core\addons\Lemmys_Core.pbo` | `-serverMod` (or the server `addons\` folder) | — | **Required on the server** by Advanced Groups and Advanced Banking. Server only: players never download it. |
+| Lemmy's Core | `@Lemmys_Core\addons\Lemmys_Core.pbo` | `-serverMod` (or the server `addons\` folder) | — | **Required on the server** by Advanced Groups and Advanced Banking. Server only: players never download it. |
 | Advanced Groups | `@Advanced Groups by Lemmy Maverick\addons\AdvancedGroups.pbo` | `-mod` | `-mod` | Contains the Control Room window and the Spawn Selection module. |
 | Advanced Banking | `@AdvancedBanking\addons\Advanced_Banking.pbo` | `-mod` | `-mod` | Contains the ATM model, the admin tablet and its own copy of the Control Room window (used only when Advanced Groups is absent). |
 
@@ -27,7 +27,7 @@ Sign every client PBO with your server key and put the `.bikey` in the server `k
 
 ```
 Server:  -mod=@CF;@Advanced Groups by Lemmy Maverick;@AdvancedBanking
-         -serverMod=@Lemmys Core
+         -serverMod=@Lemmys_Core
 Client:  -mod=@CF;@Advanced Groups by Lemmy Maverick;@AdvancedBanking
 ```
 

@@ -24,17 +24,21 @@
         <a href="{{ site.baseurl }}/keycards/"{% if page.url contains '/keycards' %} class="active"{% endif %}>Keycards</a>
         <a href="{{ site.baseurl }}/setup/"{% if page.url contains '/setup' %} class="active"{% endif %}>Setup</a>
         <a href="{{ site.baseurl }}/docs/"{% if page.url contains '/docs' or page.url contains '/wiki' %} class="active"{% endif %}>Docs</a>
+        <a href="{{ site.baseurl }}/design/"{% if page.url contains '/design' %} class="active"{% endif %}>Design</a>
         <a href="{{ site.baseurl }}/api/"{% if page.url contains '/api' %} class="active"{% endif %}>API</a>
         <a href="{{ site.baseurl }}/changelog/"{% if page.url contains '/changelog' %} class="active"{% endif %}>Changes</a>
       </nav>
-      <div class="build-state"><span></span> Beta 0.5.0</div>
+      <div class="header-links">
+        <a class="discord-link" href="{{ site.links.discord }}" target="_blank" rel="noreferrer">Discord</a>
+        <div class="build-state"><span></span> Beta 0.5.0</div>
+      </div>
     </header>
 
     <main>{{ content }}</main>
 
     <footer class="site-footer">
       <div><strong>LEMMY'S SUITE</strong><span>Lemmy's Core · Advanced Groups · Advanced Banking · Herosper Keycards Remastered</span></div>
-      <p>Setup, API and change notes, kept next to the code. Found a mistake here? Tell us on Discord or the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3748415716">Workshop page</a>.</p>
+      <p>Support and bug reports on <a href="{{ site.links.discord }}" target="_blank" rel="noreferrer">Discord</a>. Steam Workshop: <a href="{{ site.links.workshop_core }}" target="_blank" rel="noreferrer">Lemmy's Core</a> · <a href="{{ site.links.workshop_groups }}" target="_blank" rel="noreferrer">Advanced Groups</a> · <a href="{{ site.links.workshop_banking }}" target="_blank" rel="noreferrer">Advanced Banking</a> · <a href="{{ site.links.workshop_keycards }}" target="_blank" rel="noreferrer">Herosper Keycards Remastered</a>. Screens: <a href="{{ site.baseurl }}/design/">design file</a>.</p>
     </footer>
   </body>
 </html>

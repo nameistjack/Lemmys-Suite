@@ -7,6 +7,8 @@ permalink: /groups/
 
 # Advanced Groups
 
+<p class="page-links"><a class="button primary" href="{{ site.links.workshop_groups }}" target="_blank" rel="noreferrer">Steam Workshop</a> <a class="button secondary" href="{{ site.links.discord }}" target="_blank" rel="noreferrer">Discord support</a></p>
+
 Advanced Groups is the large one. It replaces the vanilla chat and map and adds groups with ranks, a minimap, compass, 3D markers, zones, territories, an optional spawn selector and a group manager for admins. Players need it too, so it goes in `-mod`; the server also needs [Lemmy's Core]({{ site.baseurl }}/core/) as a `-serverMod`. The full player and admin guide is in the [documentation]({{ site.baseurl }}/docs/advanced-groups.html), every setting in the [settings reference]({{ site.baseurl }}/docs/settings/advanced-groups.html).
 
 ## Default keys

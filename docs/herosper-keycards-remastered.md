@@ -11,6 +11,8 @@ A load-after add-on for the Workshop mod **Herosper Keycards** (`2886051760`). I
 
 It does not need Lemmy's Core, Advanced Groups or Advanced Banking.
 
+[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3751107885) · [Video](https://youtu.be/nTquudUszAM) · [Discord support](https://discord.gg/MnWuw7wZ79)
+
 ## Installation
 
 | Part | Server | Client |

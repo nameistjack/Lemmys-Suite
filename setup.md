@@ -21,7 +21,7 @@ A typical launch line:
 
 ```text
 Server:  -mod=@CF;@Advanced Groups by Lemmy Maverick;@AdvancedBanking
-         -serverMod=@Lemmys Core
+         -serverMod=@Lemmys_Core
 Client:  -mod=@CF;@Advanced Groups by Lemmy Maverick;@AdvancedBanking
 ```
 
@@ -67,7 +67,7 @@ Source folders sit side by side:
 P:\Lemmys_suit\
   AdvancedGroups\     → @Advanced Groups by Lemmy Maverick\addons\AdvancedGroups.pbo
   Advanced_Banking\   → @AdvancedBanking\addons\Advanced_Banking.pbo
-  Lemmys_Core\        → @Lemmys Core\addons\Lemmys_Core.pbo
+  Lemmys_Core\        → @Lemmys_Core\addons\Lemmys_Core.pbo
 ```
 
 In Addon Builder, select each inner folder as the source, not `P:\Lemmys_suit` itself. Keep the prefix from each folder's `$PBOPREFIX$`. Banking has an `exclude.lst`: it keeps the ATM's source `.tga`/`.png`/`.fbx` files and unused texture maps out of the PBO. Those are around 12 MB each, so check the packed size if it looks large. Don't exclude `*.cpp`, because `config.cpp` has to be inside.

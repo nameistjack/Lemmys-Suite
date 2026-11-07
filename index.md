@@ -12,6 +12,22 @@ Lemmy's Suite is three DayZ mods that share one profile folder and one in-game a
   <a href="{{ site.baseurl }}/keycards/"><b>Herosper Keycards Remastered</b><span>Companion mod. Keycard door raids: reward crates, loot tables, AI defence waves and an in-game raid editor.</span></a>
 </div>
 
+## Get the mods
+
+<div class="workshop-row">
+  <a href="{{ site.links.workshop_core }}" target="_blank" rel="noreferrer"><small>STEAM WORKSHOP</small><b>Lemmy's Core</b><span>Server only</span></a>
+  <a href="{{ site.links.workshop_groups }}" target="_blank" rel="noreferrer"><small>STEAM WORKSHOP</small><b>Advanced Groups</b><span>Server + client</span></a>
+  <a href="{{ site.links.workshop_banking }}" target="_blank" rel="noreferrer"><small>STEAM WORKSHOP</small><b>Advanced Banking</b><span>Server + client</span></a>
+  <a href="{{ site.links.workshop_keycards }}" target="_blank" rel="noreferrer"><small>STEAM WORKSHOP</small><b>Herosper Keycards Remastered</b><span>Companion mod</span></a>
+  <a href="{{ site.links.discord }}" target="_blank" rel="noreferrer"><small>SUPPORT</small><b>Discord</b><span>Help, bug reports, updates</span></a>
+</div>
+
+## Walkthrough
+
+<div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ site.links.video_suite }}" title="Lemmy's Suite walkthrough" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+
 ## How the pieces fit
 
 - **Community Framework is required.** Banking talks to the server only through CF named RPCs. Groups and Core also list it in `requiredAddons`.

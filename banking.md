@@ -7,6 +7,8 @@ permalink: /banking/
 
 # Advanced Banking
 
+<p class="page-links"><a class="button primary" href="{{ site.links.workshop_banking }}" target="_blank" rel="noreferrer">Steam Workshop</a> <a class="button secondary" href="{{ site.links.discord }}" target="_blank" rel="noreferrer">Discord support</a></p>
+
 Advanced Banking needs [Lemmy's Core]({{ site.baseurl }}/core/) on the server (`-serverMod`). The full guide is in the [documentation]({{ site.baseurl }}/docs/advanced-banking.html), every setting in the [settings reference]({{ site.baseurl }}/docs/settings/advanced-banking.html).
 
 Advanced Banking gives players a personal bank account and, with Advanced Groups loaded, a shared group account. Players use it at ATMs placed in the world. The ATM model ships inside the PBO, so it needs no other model mod. Money moves as real ruble items: depositing takes them out of your inventory and withdrawing puts them back in.

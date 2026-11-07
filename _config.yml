@@ -12,3 +12,15 @@ exclude:
   - README.md
   - pages-workflow.yml
   - tools
+
+# Links used across the site
+links:
+  discord: https://discord.gg/MnWuw7wZ79
+  workshop_core: https://steamcommunity.com/sharedfiles/filedetails/?id=3835636674
+  workshop_groups: https://steamcommunity.com/sharedfiles/filedetails/?id=3748415716
+  workshop_banking: https://steamcommunity.com/sharedfiles/filedetails/?id=3726091828
+  workshop_keycards: https://steamcommunity.com/sharedfiles/filedetails/?id=3751107885
+  workshop_herosper: https://steamcommunity.com/sharedfiles/filedetails/?id=2886051760
+  figma: https://www.figma.com/design/RToPRRSRGZrCsp9lOhPHJd/Lemmy-s-Suite-%E2%80%94-UI-Layouts
+  video_suite: CjXlzz3R3gk
+  video_keycards: nTquudUszAM
