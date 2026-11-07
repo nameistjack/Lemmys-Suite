@@ -1,9 +1,14 @@
-title: Advanced Groups Development and Progress
-description: Public development notes, architecture, progress, and integration documentation for Advanced Groups.
+title: Lemmy's Suite
+description: Setup guides, documentation, public API and changelog for Lemmy's Suite - Lemmy's Core, Advanced Groups and Advanced Banking for DayZ - and the companion mod Herosper Keycards Remastered.
 url: https://nameistjack.github.io
-baseurl: /Advanced-Groups-Development-and-Progress
+# The publish workflow sets baseurl from the public repository name.
+baseurl: /Lemmys-Suite
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 permalink: pretty
 exclude:
   - README.md
   - pages-workflow.yml
+  - tools

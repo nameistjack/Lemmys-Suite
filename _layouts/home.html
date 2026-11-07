@@ -3,29 +3,31 @@ layout: default
 ---
 <section class="hero shell">
   <div class="hero-copy">
-    <p class="eyebrow"><span>PUBLIC BUILD LOG</span> / ACTIVE DEVELOPMENT</p>
-    <h1>Built for coordination.<br><em>Engineered independently.</em></h1>
-    <p class="hero-lede">Follow Advanced Groups from system architecture to shipped features: groups, tactical markers, administration, zones, and server-authoritative tools for DayZ.</p>
+    <p class="eyebrow"><span>LEMMY'S SUITE</span> / THREE MODS, ONE ADMIN CONSOLE</p>
+    <h1>Groups, banking and<br><em>one admin console.</em></h1>
+    <p class="hero-lede">Advanced Groups and Advanced Banking run on top of Lemmy's Core, a server-only mod that gives them one profile folder and one in-game admin console. This site has the setup steps, the full documentation, the public API and what changed in each build.</p>
     <div class="hero-actions">
-      <a class="button primary" href="{{ site.baseurl }}/progress/">View current progress</a>
-      <a class="button secondary" href="{{ site.baseurl }}/wiki/">Explore documentation</a>
+      <a class="button primary" href="{{ site.baseurl }}/setup/">Install the suite</a>
+      <a class="button secondary" href="{{ site.baseurl }}/docs/">Documentation</a>
+      <a class="button secondary" href="{{ site.baseurl }}/changelog/">What changed</a>
       <a class="button ghost" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3748415716" target="_blank" rel="noreferrer">Steam Workshop</a>
     </div>
   </div>
-  <aside class="build-card" aria-label="Current build status">
-    <div class="card-top"><span>BUILD STATUS</span><b>LIVE</b></div>
-    <div class="version">0.4.0<small>BETA</small></div>
+  <aside class="build-card" aria-label="Current build numbers">
+    <div class="card-top"><span>CURRENT SOURCE</span><b>BETA</b></div>
+    <div class="version">0.5.0<small>BETA</small></div>
     <dl>
-      <div><dt>RPC protocol</dt><dd>08</dd></div>
-      <div><dt>Public API</dt><dd>02</dd></div>
-      <div><dt>Config schema</dt><dd>09</dd></div>
-      <div><dt>Layouts audited</dt><dd>29</dd></div>
+      <div><dt>Mods</dt><dd>3 + 1</dd></div>
+      <div><dt>Groups RPC protocol</dt><dd>13</dd></div>
+      <div><dt>AGPublicAPI</dt><dd>4</dd></div>
+      <div><dt>IABPublicAPI</dt><dd>2</dd></div>
+      <div><dt>DayZ target</dt><dd>1.30</dd></div>
     </dl>
     <div class="scanline" aria-hidden="true"></div>
   </aside>
 </section>
 
 <section class="content-shell shell">
-  <div class="section-index"><span>01</span><p>PROJECT OVERVIEW</p></div>
+  <div class="section-index"><span>01</span><p>THE SUITE</p></div>
   <article class="prose home-prose">{{ content }}</article>
 </section>

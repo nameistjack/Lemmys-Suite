@@ -1,26 +1,28 @@
 ---
 layout: page
-title: Development Progress
+title: Status
+section: WHERE THINGS STAND
+permalink: /progress/
 ---
 
-# Development Progress
+# Status
 
-Advanced Groups is currently in beta. The repository identifies the packaged
-release as `0.4.0-beta`; continued work is recorded under the Unreleased section
-until the next release is prepared.
+All three mods are in **beta**. The core features are in daily use, but some newer parts haven't had enough players on them to call them done. The [changelog]({{ site.baseurl }}/changelog/) tags those as untested.
 
-Current development areas include:
+## Being tested now
 
-- group, subgroup, rank, invitation, and permission workflows;
-- synchronized private, group, server, event, and tactical-ping markers;
-- responsive full-map, minimap, compass, player-list, chat, and 3D presentation;
-- safezone, no-build, PvE, PvP, and visual-zone administration;
-- Admin Command Center and Config Studio workflows;
-- optional server-authoritative spawn selection and cooldowns;
-- persistence migration, protocol compatibility, validation, logging, and release checks.
+- ATM robbery from start to payout: hold-F breach, defence waves, reward notices.
+- Zone map fill styles, optional names and icons, and the hatch at every zoom level.
+- The group list health and blood bars, and the minimap arrow.
+- Herosper Keycards Remastered raids: crate after defeat, wave timing against auto close, upper-floor AI spawns, arrow-key placement.
+- Territories, from claiming through release, and the login move-out.
 
-For dated implementation details, fixes, and removals, read the
-[complete changelog]({{ site.baseurl }}/docs/CHANGELOG/).
+## Known gaps
 
-For the current release and compatibility rules, read the
-[release guide]({{ site.baseurl }}/docs/RELEASE_GUIDE/).
+- The ATM alarm has no default sound; servers have to set `robberyAlarmSoundSet`.
+- The ATM breach bar is fixed at 180 s on the client; the *breach duration* setting only changes the server check.
+- Admins can't release someone's territory from the menu yet. Removing the flagpole does it within a minute.
+- Chat mentions are text only. There is no click-to-reply, avatars or emoji.
+- Spawn selection ships with Chernarus example points only.
+
+Gaps and test results move to the changelog once they are fixed.

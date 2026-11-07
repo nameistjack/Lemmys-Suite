@@ -3,36 +3,30 @@ layout: home
 title: Overview
 ---
 
-This is the public development hub for Advanced Groups, an independently
-designed and implemented DayZ group, map, marker, chat, navigation, zone, spawn,
-and administration framework.
+Lemmy's Suite is three DayZ mods that share one profile folder and one in-game admin console, the **Control Room**. Every config they use can be changed in game, while the server runs.
 
-No source code from another group, map, or administration mod was copied to
-build Advanced Groups. The project has its own namespaced scripts, RPC protocol,
-persistence formats, interface controllers, configuration tools, and public API.
-Common gameplay concepts such as groups, ranks, maps, and markers are implemented
-specifically for this project.
+<div class="mod-grid">
+  <a href="{{ site.baseurl }}/core/"><b>Lemmy's Core</b><span>Server-only. Profile folder, migration from the old folders, module switches and the Control Room console.</span></a>
+  <a href="{{ site.baseurl }}/groups/"><b>Advanced Groups</b><span>Groups, ranks, map and minimap, markers, chat, safe and no-build zones, territories, spawn selection and the group manager.</span></a>
+  <a href="{{ site.baseurl }}/banking/"><b>Advanced Banking</b><span>Personal and group accounts, ATMs, transfers with fees and limits, paychecks, interest, VIP tiers and ATM robberies.</span></a>
+  <a href="{{ site.baseurl }}/keycards/"><b>Herosper Keycards Remastered</b><span>Companion mod. Keycard door raids: reward crates, loot tables, AI defence waves and an in-game raid editor.</span></a>
+</div>
 
-## Start here
+## How the pieces fit
 
-- [Development progress]({{ site.baseurl }}/progress/) - current status and the complete changelog.
-- [Documentation wiki]({{ site.baseurl }}/wiki/) - linked index of all published technical pages.
-- [UI design system]({{ site.baseurl }}/docs/UI_DESIGN_SYSTEM/) - visual tokens, components, and behavior.
-- [Architecture and feature direction]({{ site.baseurl }}/docs/ui_concepts/) - system and product design.
-- [Marker integration]({{ site.baseurl }}/docs/MARKER_GUIDE/) - supported public API for server-side integrations.
-- [Spawn module]({{ site.baseurl }}/docs/SPAWN_MODULE/) - optional server-authoritative spawn selection.
+- **Community Framework is required.** Banking talks to the server only through CF named RPCs. Groups and Core also list it in `requiredAddons`.
+- **Lemmy's Core is the server-side dependency of Groups and Banking.** Load it with `-serverMod`; players never download it. It owns `$profile:LemmysSuite/`, moves files from the old `$profile:AdvancedGroups/` and `$profile:Advanced_Banking/` folders once, and runs the Control Room, version history, staff access and logging.
+- **Banking does not need Groups.** If Groups is loaded, group accounts, rank permissions, group opening costs and the robbery map marker switch on. Without Groups, personal banking works as before.
+- **Nothing depends on Trader, Expansion, VPP or another map or group mod.** Banking can import balances and currency classes from an existing TraderPlus bank, but TraderPlus does not need to be installed.
 
-## Project principles
+## Where to start
 
-- Server-authoritative validation and persistence.
-- Namespaced inputs, RPC identifiers, classes, and stored data.
-- No required runtime dependency on another map, group, or admin mod.
-- Responsive native DayZ layouts with reusable project-owned components.
-- Explicit schema, protocol, public API, migration, and release contracts.
-- Compatibility through documented interfaces instead of access to internal data.
+1. [Setup]({{ site.baseurl }}/setup/) covers the install order, keys, launch parameters and the files each mod creates.
+2. The pages for each mod list every setting with its default, and what to check after a change.
+3. The [documentation]({{ site.baseurl }}/docs/) has the player and admin guides, the Control Room, every setting, the layout reference and troubleshooting.
+4. [API]({{ site.baseurl }}/api/) is for other mod authors: the stable server-side calls, with examples.
+5. [Changes]({{ site.baseurl }}/changelog/) lists what changed in each build. Untested entries say so.
 
-## Publication boundary
+## What this site is not
 
-This site publishes development documentation only. Game source, server
-configuration, credentials, packaged assets, and the Steam Workshop listing are
-not included in the generated site.
+It doesn't include game source, server configs, packed PBOs or keys. For bug reports, include the server RPT, the `LemmysSuite/Logs` folder and which build you run. "It's broken" is not enough to reproduce anything.

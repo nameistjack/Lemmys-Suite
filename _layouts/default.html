@@ -12,24 +12,29 @@
   <body>
     <div class="signal-line" aria-hidden="true"></div>
     <header class="site-header">
-      <a class="brand" href="{{ site.baseurl }}/" aria-label="Advanced Groups development home">
+      <a class="brand" href="{{ site.baseurl }}/" aria-label="Lemmy's Suite home">
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span><strong>ADVANCED GROUPS</strong><small>DEVELOPMENT LOG</small></span>
+        <span><strong>LEMMY'S SUITE</strong><small>CORE · GROUPS · BANKING · KEYCARDS</small></span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="{{ site.baseurl }}/"{% if page.url == '/' %} class="active"{% endif %}>Overview</a>
-        <a href="{{ site.baseurl }}/progress/"{% if page.url contains '/progress' %} class="active"{% endif %}>Progress</a>
-        <a href="{{ site.baseurl }}/wiki/"{% if page.url contains '/wiki' %} class="active"{% endif %}>Wiki</a>
-        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3748415716" target="_blank" rel="noreferrer">Workshop</a>
+        <a href="{{ site.baseurl }}/core/"{% if page.url contains '/core' %} class="active"{% endif %}>Core</a>
+        <a href="{{ site.baseurl }}/groups/"{% if page.url contains '/groups' %} class="active"{% endif %}>Groups</a>
+        <a href="{{ site.baseurl }}/banking/"{% if page.url contains '/banking' %} class="active"{% endif %}>Banking</a>
+        <a href="{{ site.baseurl }}/keycards/"{% if page.url contains '/keycards' %} class="active"{% endif %}>Keycards</a>
+        <a href="{{ site.baseurl }}/setup/"{% if page.url contains '/setup' %} class="active"{% endif %}>Setup</a>
+        <a href="{{ site.baseurl }}/docs/"{% if page.url contains '/docs' or page.url contains '/wiki' %} class="active"{% endif %}>Docs</a>
+        <a href="{{ site.baseurl }}/api/"{% if page.url contains '/api' %} class="active"{% endif %}>API</a>
+        <a href="{{ site.baseurl }}/changelog/"{% if page.url contains '/changelog' %} class="active"{% endif %}>Changes</a>
       </nav>
-      <div class="build-state"><span></span> Beta 0.4.0</div>
+      <div class="build-state"><span></span> Beta 0.5.0</div>
     </header>
 
     <main>{{ content }}</main>
 
     <footer class="site-footer">
-      <div><strong>ADVANCED GROUPS</strong><span>Independent DayZ development</span></div>
-      <p>Architecture, progress, and integration notes. <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3748415716">View on Steam Workshop</a>.</p>
+      <div><strong>LEMMY'S SUITE</strong><span>Lemmy's Core · Advanced Groups · Advanced Banking · Herosper Keycards Remastered</span></div>
+      <p>Setup, API and change notes, kept next to the code. Found a mistake here? Tell us on Discord or the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3748415716">Workshop page</a>.</p>
     </footer>
   </body>
 </html>
