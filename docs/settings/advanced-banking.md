@@ -93,10 +93,11 @@ Section id: `robbery` · stored in `IABConfig`
 |---|---|---|---|---|---|
 | **ATM robbery**  | `enableATMRobbery` | On / off |  | `false` | Allow the robbery action on ATMs. |
 | **Cooldown per ATM**  | `robberyCooldownMinutes` | Whole number | 0 – 10080 minutes | `120` | An ATM cannot be robbed again for this long. |
-| **Robbery duration** *read only* | `robberyDurationSeconds` | Whole number | 1 – 3600 seconds | `IAB_ATM_ROBBERY_ACTION_SECONDS` | Fixed in the mod so every client agrees on the action length. |
+| **Robbery duration** *read only* | `robberyDurationSeconds` | Whole number | 1 – 3600 seconds | `IAB_ATM_ROBBERY_ACTION_SECONDS` | How long the breach runs after the robber presses F. The server keeps the time. |
 | **Smallest reward**  | `robberyMinimumReward` | Whole number | 0 – 2000000000 money | `5000` | Lowest cash payout. |
 | **Largest reward**  | `robberyMaximumReward` | Whole number | 0 – 2000000000 money | `25000` | Highest cash payout. |
 | **Pay out as cash**  | `robberyPaysCash` | On / off |  | `true` | The loot drops into the robber's inventory as money items, so it can be lost or taken. Off pays straight into their bank account. |
+| **Stay radius**  | `robberyStayRadius` | Number | 5 – 500 m | `40` | The robber may move this far from the ATM while the breach runs (to take cover or fight). Further away cancels the breach. |
 | **Announce robberies**  | `robberyAnnounce` | On / off |  | `true` | Every player gets a notification when a breach starts and when it finishes. |
 | **Players needed online**  | `robberyMinimumPlayersOnline` | Whole number | 0 – 200 players | `0` | Robberies cannot start on an empty server. 0 = no minimum. |
 | **Robberies at the same time**  | `robberyMaximumConcurrent` | Whole number | 1 – 50 robberies | `1` | How many ATMs can be breached at once across the map. |

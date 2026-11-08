@@ -9,7 +9,7 @@ Lemmy's Suite is three DayZ mods that share one profile folder and one in-game a
   <a href="{{ site.baseurl }}/core/"><b>Lemmy's Core</b><span>Server-only. Profile folder, migration from the old folders, module switches and the Control Room console.</span></a>
   <a href="{{ site.baseurl }}/groups/"><b>Advanced Groups</b><span>Groups, ranks, map and minimap, markers, chat, safe and no-build zones, territories, spawn selection and the group manager.</span></a>
   <a href="{{ site.baseurl }}/banking/"><b>Advanced Banking</b><span>Personal and group accounts, ATMs, transfers with fees and limits, paychecks, interest, VIP tiers and ATM robberies.</span></a>
-  <a href="{{ site.baseurl }}/keycards/"><b>Herosper Keycards Remastered</b><span>Companion mod. Keycard door raids: reward crates, loot tables, AI defence waves and an in-game raid editor.</span></a>
+  <a href="{{ site.baseurl }}/keycards/"><b>Herosper Keycards Remastered</b><span>Standalone companion mod. Keycard door raids: reward crates, loot tables, AI defence waves and an in-game raid editor.</span></a>
 </div>
 
 ## Get the mods

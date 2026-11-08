@@ -7,7 +7,7 @@ permalink: /docs/herosper-keycards-remastered.html
 {% raw %}
 # Herosper Keycards Remastered
 
-A load-after add-on for the Workshop mod **Herosper Keycards** (`2886051760`). It keeps the original models, textures, sounds and server plugin, makes keycard doors work on DayZ 1.30, and turns every keycard door into a raid: a reward crate, loot tables, AI defence waves, server messages and Discord posts. Everything is set up in game with the raid editor.
+A standalone remaster of the Workshop mod **Herosper Keycards** (`2886051760`). It ships Herosper's original models, textures, sounds and server plugin in one mod (Herosper released the mod for anyone to update and publish), makes keycard doors work on DayZ 1.30, and turns every keycard door into a raid: a reward crate, loot tables, AI defence waves, server messages and Discord posts. Everything is set up in game with the raid editor.
 
 It does not need Lemmy's Core, Advanced Groups or Advanced Banking.
 
@@ -15,17 +15,25 @@ It does not need Lemmy's Core, Advanced Groups or Advanced Banking.
 
 ## Installation
 
-| Part | Server | Client |
-|---|---|---|
-| `@HerosperKeycards` (Workshop 2886051760) | `-mod` | `-mod` |
-| `@HerosperKeycards_Remastered` | `-mod`, after Herosper Keycards | `-mod`, after Herosper Keycards |
-| `KeyCardSystemServer.pbo` (from the original mod) | server only | — |
-
 ```
--mod=@CF;@HerosperKeycards;@HerosperKeycards_Remastered
+-mod=@CF;@HerosperKeycards_Remastered
 ```
 
-Sign the PBO with your key and put the `.bikey` in the server `keys\` folder. Remove any older `@HerosperKeycards_130_Fix` from the launch line: both use the same scripts and must not load together.
+Load it on server and client. It is standalone: **do not** also load the original `@HerosperKeycards` or the old `@HerosperKeycards_130_Fix`. They define the same classes and the game stops with script errors. Existing doors, `config.json` and `KCR_*` files keep working, because every class name is unchanged.
+
+The mod folder holds five PBOs, all signed with the same key (put the `.bikey` in the server `keys\` folder):
+
+| PBO | Contents |
+|---|---|
+| `HerosperKeycards_Remastered.pbo` | Remastered: 1.30 fixes, raids, raid editor, colour doors and cards |
+| `KlimaX_Doors.pbo` | Herosper's door models and textures |
+| `RedemptionKeyCards.pbo` | Herosper's keycard and crate models and textures |
+| `KeyCardSystem.pbo` | Herosper's door and keycard scripts, alarm sounds |
+| `KeyCardSystemServer.pbo` | Herosper's server plugin (door saving and spawning) |
+
+### Packing from source
+
+The four Herosper parts live in `P:\HerosperKeycards_Remastered_Assets\<name>\`. Pack **each folder as its own PBO** with the prefix equal to the folder name (`KlimaX_Doors`, `RedemptionKeyCards`, `KeyCardSystem`, `KeyCardSystemServer`) and **binarize turned off**: the models and door configs are already binarized and their texture paths depend on those prefixes. Packing the whole `_Assets` folder as one PBO gives `Unknown type 'Land_KlimaX_T3Door'` on start. `pack-herosper-remastered.bat` in the projects folder packs all five correctly.
 
 On the first start the server creates `$profile:KeyCardSystem/EditorAdmins.json`. Stop the server, add your SteamID64 and start it again:
 
@@ -40,6 +48,38 @@ Files from builds before the rename (`H130_Doors.json`, `H130_LootTables.json`, 
 - DayZ 1.30's door action only accepts `BuildingBase` targets. Herosper's keycard doors derive from `Building`, so they stopped opening. Keycard doors now use their own door path; every other door keeps the vanilla 1.30 behaviour.
 - The held card and the target door are checked again on the server, and the card is consumed on the server.
 - Doors whose objects were deleted (for example while the server shuts down) are removed from KeyCardSystem's list before its timer reaches them, which stops a null-pointer crash on shutdown.
+
+## Doors and keycards
+
+Herosper's mod has three door models and one keycard model; every variant is a texture swap:
+
+| Herosper door | Model | Opened by |
+|---|---|---|
+| T1 | container door | `RedemptionKeyCard_ASW1` (T1, orange) |
+| T2 · T4 · T7 | sliding door — cyan, green, Blackmarket | `ASW2` (T2) · `ASW4` (Green) · `ASW7` (Blackmarket) |
+| T3 · T5 · T6 | vault door — red, purple, lime | `ASW3` (T3) · `ASW5` (Purple) · `ASW6` (Lime) |
+
+Remastered adds six colours. Each colour has a sliding **door** (Herosper's T2 model), a **vault** (the T3 model) and a **keycard** (the card model); the card opens both doors of its colour by default:
+
+| Colour | Sliding door | Vault | Keycard |
+|---|---|---|---|
+| Yellow | `Land_KCR_YellowDoor` | `Land_KCR_YellowVault` | `KCR_KeyCard_Yellow` |
+| Blue | `Land_KCR_BlueDoor` | `Land_KCR_BlueVault` | `KCR_KeyCard_Blue` |
+| Orange | `Land_KCR_OrangeDoor` | `Land_KCR_OrangeVault` | `KCR_KeyCard_Orange` |
+| White | `Land_KCR_WhiteDoor` | `Land_KCR_WhiteVault` | `KCR_KeyCard_White` |
+| Pink | `Land_KCR_PinkDoor` | `Land_KCR_PinkVault` | `KCR_KeyCard_Pink` |
+| Teal | `Land_KCR_TealDoor` | `Land_KCR_TealVault` | `KCR_KeyCard_Teal` |
+
+They appear in the editor's door class list as *Yellow door*, *Yellow vault* and so on, and any door can still be given its own card list.
+
+**Textures.** The colour cards, doors and vaults use the textures in `HerosperKeycards_Remastered\data\cards\` and `data\doors\` (`<colour>_card_co.paa`, `<colour>_door_co.paa`). To use your own, replace those `.paa` files, or add new ones and change that class's `hiddenSelectionsTextures` line in `config.cpp`. The sliding door and the card have one texture; the vault has two — keep the second (the grey metal part) as it is. Herosper's mod may be updated and republished, so recolours of their textures can ship too.
+
+**Loot.** Add the new cards to your `types.xml` like any item, for example:
+
+```xml
+<type name="KCR_KeyCard_Yellow"><nominal>2</nominal><lifetime>3600</lifetime><restock>1800</restock><min>1</min><quantmin>-1</quantmin><quantmax>-1</quantmax><cost>100</cost><flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/><category name="tools"/><usage name="Military"/></type>
+<type name="KCR_KeyCard_Blue"><nominal>2</nominal><lifetime>3600</lifetime><restock>1800</restock><min>1</min><quantmin>-1</quantmin><quantmax>-1</quantmax><cost>100</cost><flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/><category name="tools"/><usage name="Military"/></type>
+```
 
 ## How a raid works
 
@@ -62,6 +102,8 @@ The list on the left shows every keycard door by its name (or class and grid), w
 
 **DOOR**
 - Door class (T1–T7), position, orientation, scale, auto close and close delay.
+- **KEYCARDS THAT OPEN IT** — leave empty for the original rule: each Herosper card opens its own tier (`RedemptionKeyCard_ASW1` opens T1 … `ASW7` opens T7). Search and **ADD** any item class instead — a card from another mod, a key, a custom item — and only those open this door. A parent class (for example `KeyCard_ParentBase`) allows every item derived from it.
+- **CARD USED UP** — on (default) the card is consumed when the door opens; off makes it reusable.
 - **NAME** — used in announcements, Discord posts, the log and the door list, for example *"A secured door was opened at Military Bunker (grid 49 101)"*. Without a name the grid reference is used.
 - Saving spawns, moves or replaces the door straight away — no restart.
 
@@ -93,7 +135,7 @@ Discord webhook on / off and its URL. They are stored in KeyCardSystem's own `co
 
 ## Placing objects
 
-**PLACE IN WORLD** closes the editor and shows the object (door, crate) or an amber sphere (spawn point) where you aim. Saved spawn points are shown as cyan spheres with a vertical line that is visible through walls.
+**PLACE IN WORLD** closes the editor and shows the object (door, crate) or a yellow barrel (spawn point) where you aim. Saved spawn points are shown as red barrels; both exist only on your screen.
 
 | Key | Action |
 |---|---|
@@ -133,6 +175,8 @@ All under `$profile:KeyCardSystem/`:
 
 | Problem | Cause and fix |
 |---|---|
+| `Unknown type 'Land_KlimaX_T3Door'` (or another `Land_KlimaX_` class) on start | Herosper's parts were packed into one PBO or with the wrong prefix. Pack the four `_Assets` folders as separate PBOs (see *Packing from source*). |
+| Script errors about classes defined twice | The original `@HerosperKeycards` or `@HerosperKeycards_130_Fix` is still loaded. Remove it from server and client. |
 | Numpad 6 does nothing | Your SteamID64 is not in `EditorAdmins.json`; the server log shows `Editor hotkey ignored for non-admin <id>`. If the *Herosper Keycards Remastered* entry is missing from the Controls menu, the PBO is old — repack and restart the game. |
 | Saved door does not appear | Check `KCR_Raids.log`: it lists every save with the spawn result and position. A very small scale (for example 0.4) can make a door hard to spot. |
 | AI spawn on the ground floor | Update: older builds dropped every spawn onto the terrain. Place points on the floor you want and keep the spread small. |

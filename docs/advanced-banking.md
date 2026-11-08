@@ -39,7 +39,7 @@ Money items (for example ruble notes) are accepted at the value the server sets;
 
 ### Robbing an ATM
 
-If robbery is on, look at an ATM with empty hands, scroll the mouse wheel to **Breach Banking Terminal** and **hold F** until the bar is full (3 minutes by default). Letting go, walking away, dying or logging out cancels it. The result — the reward, or why the breach was refused (cooldown, robbery off, protected ATM, too far away) — appears as an on-screen notice.
+If robbery is on, look at an ATM with empty hands, scroll the mouse wheel to **Breach Banking Terminal** and **press F once**. The breach then runs on its own (3 minutes by default), so you are free to fight off players and defenders. Notices count down every 30 seconds. Moving further than the stay radius from the ATM (40 m by default), dying or logging out cancels it; when the timer ends the reward is paid automatically. The result — the reward, or why the breach was refused (cooldown, robbery off, protected ATM, too far away) — appears as an on-screen notice.
 
 The breach takes a set time; nearby players hear an alarm, police (SteamIDs or whole groups) get the ATM's location, and a danger marker can appear on the map. With **defence waves** on, infected or AI spawn around the ATM in waves while the breach runs. A successful breach pays a random reward — or, with **cash pools** on, a share of the cash deposited at that ATM. Each ATM and each robber has a cooldown, and some ATMs can be immune (for example in safe zones).
 

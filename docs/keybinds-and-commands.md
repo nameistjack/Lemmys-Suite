@@ -34,7 +34,7 @@ At an ATM (empty hands), scroll the mouse wheel to choose the action:
 |---|---|
 | Open Advanced Banking | F |
 | Open Banking Administration (banking admins) | F |
-| Breach Banking Terminal (robbery) | hold F |
+| Breach Banking Terminal (robbery) | press F once |
 
 ## Herosper Keycards Remastered
 

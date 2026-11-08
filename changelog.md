@@ -34,7 +34,7 @@ Newest first. Entries tagged **untested** compile-checked on our side but haven'
 - Search-and-add for AI classes and loot items; door names used in all messages.
 - Reward crate only after the defenders are dead (switchable); waves must fit inside the door's open time; a raid fails if the door locks first.
 - AI spawn on the navigation mesh at the placed floor; fall-through guard.
-- Placement with arrow-key fine movement; spheres mark spawn points.
+- Placement with arrow-key fine movement; barrels mark spawn points.
 - Fixed: placement could save a spot behind the player; doors saved far from where they were aimed.
 
 ## 0.5.0-beta: November 2026
